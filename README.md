@@ -1,4 +1,4 @@
-## Daten und Information Statistik
+== Daten und Information Statistik
 
 Dieses Repository enthält die Unterlagen für den Daten & Information 2 Kurs. 
 
