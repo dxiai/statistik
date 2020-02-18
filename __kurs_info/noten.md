@@ -41,4 +41,4 @@ Nachträglich wiederaufgeschaltene Abgaben erhalten automatisch 20% Punktabzug.
 
 ### Entschuldigungen 
 
-Grundsätzlich müssen Entschuldigungen (Krankmeldungen, Militärdienst usw.) für die Leistungsnachweise beim Studiensekretariat eingegeben werden, damit diese für die Leistungsnachweise berücksichtigt werden können. Entschuldigte Nachreichungen werden über die Studiengangsleitung koordiniert. 
+Grundsätzlich müssen Entschuldigungen (Krankmeldungen, Militärdienst usw.) für die Leistungsnachweise beim Studiensekretariat eingegeben werden, damit diese für die Leistungsnachweise berücksichtigt werden können. Entschuldigte Nachreichungen werden mit der Studiengangsleitung abgesprochen. 
