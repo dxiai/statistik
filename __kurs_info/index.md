@@ -1,4 +1,4 @@
-## Kursorganisation 
+## Kursorganisation 
 
 Dieser Kurs hat 12 inhaltliche Teile zur den wichtigsten Themen der Statistik. Die Themen wurden so ausgewählt, dass der Schwerpunkt auf der Bedeutung der Techniken für die Anwendung liegt.
 
@@ -6,17 +6,17 @@ In diesem Kurs erhalten Sie zu jedem Thema eine kompakte Einführung. Die Einfü
 
 ### Einbettung im Modul
 
-Die Statistik ist Teil des Moduls Daten und Information 2. Das Modul besteht aus dem Kurs _"Empirische Methoden"_ und _"Statistik"_. Beide Module sind im organisatorisch und inhaltlich aufeinander abgestimmt. Es gilt im gesamten Modul die gleiche Gruppeneinteilung. Stellen Sie deshalb sicher, dass Sie in Moodle in beiden Modulen in den gleichen Arbeitsgruppen und Präsenzgruppen zugeteilt sind.
+Die Statistik ist Teil des Moduls Daten und Information 2. Das Modul besteht aus dem Kurs _"Empirische Forschungsmethoden"_ und _"Statistik"_. Beide Module sind im organisatorisch und inhaltlich aufeinander abgestimmt. Es gilt im gesamten Modul die gleiche Gruppeneinteilung. Stellen Sie deshalb sicher, dass Sie in Moodle in beiden Modulen in den gleichen Arbeitsgruppen und Präsenzgruppen zugeteilt sind.
 
 Grundsätzlich stehen die Aufgaben im Kurs Statistik für sich und müssen jeweils _einzeln_ abgegeben werden. 
 
 Die Testate beziehen sich auf Ihre Arbeit im anderen Kurs. Diese Testate geben Sie als _Gruppe_ ab und erhalten eine gemeinsame Gruppennote. Die Termine für die Testate hängen von Ihrer Zuteilung in der jeweiligen Präsenzgruppe ab. 
 
-### Arbeitsumgebung
+### Arbeitsumgebung
 
 Für alle Übungen werden R-Notebooks auf Basis der JupyterLab Plattform verwendet. Die Arbeitsumgebung wird durch den Dozierenden als Cloud-Dinest bereitgestellt. Allen Studierenden steht damit eine persönliche Arbeitsumgebung online zur Verfügung.
 
-### Lokale Arbeitsumgebung 
+### Lokale Arbeitsumgebung 
 
 Optional kann die Arbeitsumgebung auch lokal auf dem persönlichen Laptop installiert werden. Dazu wird die Software [Docker Desktop](https://www.docker.com/products/docker-desktop) benötigt. 
 
