@@ -33,7 +33,6 @@ Mit Hilfe empirischer Daten können wir entscheiden, ob eine Hypothese *akzeptie
 
 Wir bezeichnen jene Daten als *empirische Daten*, die wir mit Hilfe statistischer Methoden auswerten können. Die Statistik unterstützt uns in diesem Prozess dabei, unsere Fakten nachvollziehbar zu *bestätigen* oder *abzulehnen*. Gleichzeitig hilft uns die Statistik, die Effekte von Messfehlern anzuschätzen und zu reduzieren.
 
-Die Verben **"verifizieren", "annehmen", "akzeptieren"** und **"bestätigen"** werden in der statistischen Fachliteratur synonym verwendet, wenn eine Aussage durch empirische Daten belegt werden kann. Die Verben **"falsifizieren", "ablehnen"** oder **"verwerfen"** bezeichnen synonym empirisch nicht bestätigte Aussagen. 
 
 ### Fehler
 

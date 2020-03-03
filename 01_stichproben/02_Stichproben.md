@@ -2,7 +2,7 @@
 
 Nicht immer können oder wollen wir eine Vollerhebung durchführen. In solchen Fällen wählen wir Entitäten für unsere Studie aus. Diese Auswahl wird als *Stichprobe* oder im Englischen als *Sample* bezeichnet. In einer Stichprobe müssen alle untersuchten Entitäten die definierenden Eigenschaften der Grundgesamtheit erfüllen. Das heisst, es müssen zum Beispiel alles Studierende im ZHAW Studiengang Facility Management sein. Deshalb müssen wir in einer Studie sicherstellen, dass alle Entitäten Teil der Grundgesamtheit sind.
 
-Aus einer beliebigen Stichprobe lassen sich nur bedingt verallgemeinerbare Aussagen generieren, denn es besteht die Gefahr, dass die Stichprobe so gewählt wurde, dass die Entitäten eine gewünschte Aussage zu bestätigen. Dieses Problem wird auch als "Beobachterfehler", "Bias" oder "Fehler ersten Grades" bezeichnet.
+Aus einer beliebigen Stichprobe lassen sich nur bedingt verallgemeinerbare Aussagen generieren, denn es besteht die Gefahr, dass die Stichprobe so gewählt wurde, dass die Entitäten eine gewünschte Hypothese zu bestätigen. Dieses Problem wird auch als "Beobachterfehler", "Bias" oder "Fehler ersten Grades" bezeichnet.
 
 Damit wir den Beobachterfehler minimieren, sollten wir die Entitäten zufällig aus der Grundgesamtheit auswählen. Eine zufällige Auswahl von Entitäten bezeichnet man als *Zufallsstichprobe*. Bei einer Zufallsstichprobe müssen wir berücksichtigen, dass das Ergebnis einer Studie durch zufällige Abweichungen der Entitäten vom tatsächlichen Ergebnis einer (theoretischen) Vollerhebung abweichen kann.
 

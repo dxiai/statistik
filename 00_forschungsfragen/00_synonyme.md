@@ -1,0 +1,1 @@
+Die Verben **"verifizieren", "annehmen", "akzeptieren"** und **"bestätigen"** werden in der statistischen Fachliteratur synonym verwendet, wenn eine Aussage durch empirische Daten belegt werden kann. Die Verben **"falsifizieren", "ablehnen"** oder **"verwerfen"** bezeichnen synonym empirisch nicht bestätigte Aussagen. 
