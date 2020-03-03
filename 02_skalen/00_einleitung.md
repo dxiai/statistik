@@ -1,0 +1,3 @@
+## Skalen, Kennwerte und Verteilungen
+
+Eine empirische Grundgesamtheit setzt sich aus Entitäten zusammen. Jede Entität kann durch beobachtbare, d.h. messbare *Eigenschaften* bzw. *Merkmale* beschrieben werden. In der Statistik untersuchen wir diese Merkmale für alle Entitäten einer Erhebung mit Hilfe von *Skalen*. In diesem Abschnitt befassen wir uns mit den Charakteristiken von Skalen und den Implikationen für die statistische Auswertung. 
