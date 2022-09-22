@@ -1,0 +1,153 @@
+<style>
+
+/* Überschriften und Absätze dynamisch an die Bildschirm_BREITE_ anpassen 
+ * Die Lösung ist zwar nicht optimal, aber viel besser als die winzige 
+ * Standardschriftgrösse.
+ *
+ * Berechneten CSS3 Variablen funktionieren leider nicht immer in 
+ * <style> tags. 
+ */
+#page-content h1 
+{ 
+    font-size: 2.5vw;
+    margin-top: 1.2em;
+    margin-bottom: .7em;
+} 
+
+#page-content h2 
+{ 
+    font-size: 2.25vw;
+    margin-top: 1.2em;
+    margin-bottom: .7em;
+} 
+
+#page-content h3 
+{ 
+    font-size: 2vw;
+    margin-top: 1.2em;
+    margin-bottom: .7em;
+} 
+
+#page-content h4 
+{ 
+    font-size: 1.75vw;
+    margin-top: 1.2em;
+    margin-bottom: .7em;
+} 
+
+#page-content pre, 
+#page-content li, 
+#page-content td, 
+#page-content th, 
+#page-content p 
+{
+    font-size: 1.3vw;
+}
+
+/* Das padding der Listen ist nicht in Ordnung. Dann lieber den Browserstandard. */
+#page-content ul 
+{
+	padding-left: revert;
+}
+
+/* Hervorgehobenen Text etwas einrücken und noch mehr hervorheben */
+.alert p, 
+p.alert 
+{
+    margin: .5vw;
+}
+
+/* Code Blöcke visuell abheben */
+pre 
+{ 
+    padding: .5vw;
+    background-color: #EEE;
+}
+
+/* Tabellen brauchen einen Abstand zum nächsten Inhalt */
+#page-content table 
+{
+    margin-bottom: 1.5vw;
+}
+
+/* Tabellenzellen zentrieren und mit einen kleinen Rand versehen */
+#page-content th, 
+td 
+{
+    padding: 5px;
+    text-align: center;
+}
+
+/* Tabellen immer schön einrahmen */
+#page-content table, 
+th, 
+td 
+{
+    border: 1px solid black;
+}
+
+/* Bildgrösse zentral festlegen */
+#region-main img 
+{
+    margin: 5px;
+    width: 40%;
+}
+
+@media only screen and (max-width: 1024px) 
+{
+    /* Schriftgrössen für 13" Screens mit fester Grösse versehen 
+     */
+    #region-main 
+    {
+        padding-left: 5px;
+        padding-right: 8px;
+    }
+
+    #page-content h1 
+    { 
+        font-size: 20pt;
+        margin-top: 1.2em;
+        margin-bottom: .7em;
+    } 
+
+    #page-content h2 
+    { 
+        font-size: 18pt;
+        margin-top: 1.2em;
+        margin-bottom: .7em;
+    }
+
+    #page-content h3 
+    { 
+        font-size: 16pt;
+        margin-top: 1.2em;
+        margin-bottom: .7em;
+    } 
+
+    #page-content h4 
+    { 
+        font-size: 14pt;
+        margin-top: 1.2em;
+        margin-bottom: .7em;
+    } 
+
+    #page-content pre, 
+    #page-content li, 
+    #page-content td, 
+    #page-content th, 
+    #page-content p 
+    {
+        font-size: 12pt;
+    }
+}
+
+@media only screen and (max-width: 768px) 
+{
+    /* Auf kleinen Bildschirmen sollten Bilder grösser sein */
+    #region-main img 
+    {
+        margin: 5px;
+        width: 90%;
+    }
+}
+</style>

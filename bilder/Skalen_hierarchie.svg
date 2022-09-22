@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="136 364 777.5 227" width="777.5" height="227">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="20" panose-1="2 0 8 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="975.0061" descent="-216.99524" font-weight="700">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Bold"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.18.3\n2021-03-04 11:16:41 +0000</metadata>
+  <g id="Arbeitsfl_che_2" stroke-dasharray="none" fill="none" stroke="none" stroke-opacity="1" fill-opacity="1">
+    <title>Arbeitsfläche 2</title>
+    <g id="Arbeitsfl_che_2_Ebene_1">
+      <title>Ebene 1</title>
+      <g id="Graphic_2">
+        <path d="M 155 374 L 894.5 374 C 899.4706 374 903.5 378.02944 903.5 383 L 903.5 572 C 903.5 576.97056 899.4706 581 894.5 581 L 155 581 C 150.02944 581 146 576.97056 146 572 L 146 383 C 146 378.02944 150.02944 374 155 374 Z" fill="#aeebff"/>
+        <text transform="translate(161 465.20993)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="700" fill="black" x="0" y="20">Nominalskaliert</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <path d="M 327.5 389 L 874.5 389 C 879.4706 389 883.5 393.02944 883.5 398 L 883.5 557 C 883.5 561.97056 879.4706 566 874.5 566 L 327.5 566 C 322.52944 566 318.5 561.97056 318.5 557 L 318.5 398 C 318.5 393.02944 322.52944 389 327.5 389 Z" fill="#00aeef"/>
+        <text transform="translate(333.5 465.20993)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="700" fill="white" x="0" y="20">Ordinalskaliert</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <path d="M 498.5 403.5 L 853.5 403.5 C 858.4706 403.5 862.5 407.52944 862.5 412.5 L 862.5 542.5 C 862.5 547.47056 858.4706 551.5 853.5 551.5 L 498.5 551.5 C 493.52944 551.5 489.5 547.47056 489.5 542.5 L 489.5 412.5 C 489.5 407.52944 493.52944 403.5 498.5 403.5 Z" fill="#006aaa"/>
+        <text transform="translate(499.5 465.20993)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="700" fill="white" x="0" y="20">Intervallskaliert</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <path d="M 666 420 L 835.5 420 C 840.4706 420 844.5 424.02944 844.5 429 L 844.5 528 C 844.5 532.97056 840.4706 537 835.5 537 L 666 537 C 661.0294 537 657 532.97056 657 528 L 657 429 C 657 424.02944 661.0294 420 666 420 Z" fill="#05426b"/>
+        <text transform="translate(667 466.20993)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="700" fill="white" x="13.77" y="20">Varianzskaliert</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
