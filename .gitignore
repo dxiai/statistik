@@ -1,3 +1,9 @@
 __kurs_info/~$organisatorisches.pptx
 __kurs_info/.DS_Store
 .DS_Store
+.jupyter/lab/workspaces/default-37a8.jupyterlab-workspace
+.jupyter/migrated
+.local/share/jupyter/nbsignatures.db
+.gitignore
+.local/share/jupyter/runtime/jupyter_cookie_secret
+.local/share/jupyter/notebook_secret
