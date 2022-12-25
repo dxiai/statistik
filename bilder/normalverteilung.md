@@ -40,7 +40,9 @@ Wir legen ein sog. *Konfidenzinterval* von 95% fest. Das bedeutet, dass wir unse
 *Abbildung: Prozent wahrscheinlicherer (blau) und unwahrscheinlicher (weiss) Abweichungen* 
 
 
-<p class="alert alert-info">Das Konzept des Konfidenzintervalls besprechen wir im folgenden Abschnitt <i>Konfidenz</i>. Für das Erste akzeptieren wir das Konzept.</p>
+<p class="alert alert-info" markdown="1">
+Das Konzept des Konfidenzintervalls besprechen wir im folgenden Abschnitt *Konfidenz*. Für das Erste akzeptieren wir das Konzept.
+</p>
 
 Diese Überlegungen müssen wir für **jede** Variable durchführen, bevor wir den Mittelwert und die Standardabweichung angeben dürfen. Zum Glück haben sich schlaue Köpfe dazu bereits Gedanken gemacht. Von den verschiedenen Verfahren, die unsere Fragestellung beantworten hat sich der ***Shapiro-Wilk-Text auf Normalität*** als Standard durchgesetzt. Dieser Test liefert uns einen sog. `p-Wert`, der uns mitteilt, wieviel Prozent der Abweichungen von der Normalverteilung noch unwahrscheinlicher sind als unsere gemessenen Daten. Der Shapiro-Wilk-Test hat als Nullhypothese die Annahme, dass eine Variable normalverteilt ist.
 
