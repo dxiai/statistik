@@ -1,0 +1,85 @@
+variablen,skalierung,beschreibung
+kurs,nominal,NA
+q00_1,ordinal,"Wie empfinden Sie sich und Ihren Medienkonsum  zwischen den Extremen ""ganz analog"" (1) und ""ganz digital und online"" (7)?"
+q00_2,nominal,Gender
+q06_1,ordinal,Ich versuche immer die neusten Geräte zu haben.
+q06_20,ordinal,"Ich habe das Gefühl, dass ich meine digitalen Geräte optimal nutze."
+q07_1,ordinal,Items pro Monat
+q08_1,ordinal,Abos pro Monat
+q09_1,nominal,Mobile OS
+q15_1,ordinal,Zu Hause
+q15_2,ordinal,Unterwegs Im Zug
+q15_3,ordinal,Unterwegs im Auto
+q15_4,ordinal,Unterwegs Im Tram oder Bus
+q15_5,ordinal,Unterwegs Beim Warten
+q15_6,ordinal,In der Uni/am Campus
+q15_7,ordinal,Am Arbeitsplatz an den Tagen an denen ich arbeite
+q15_8,ordinal,In der Freizeit (z.B. beim Ausgang)
+q15_9,ordinal,Beim Organisieren ausser Haus (z.B. beim Einkaufen)
+q16_1,ordinal,Laptop/Notebook
+q16_2,ordinal,PC
+q16_3,ordinal,Laptop Docking Station oder Externer Bildschirm
+q16_4,ordinal,iPad
+q16_5,ordinal,Android Tablet
+q16_6,ordinal,Windows Tablet
+q16_7,ordinal,Digitalkamera (DSR)
+q16_8,ordinal,E-Book Lesegerät (z. B. Kindle)
+q16_9,ordinal,Fitness Tracker (z.B. FitBit)
+q16_10,ordinal,"Smartwatch (z.B. Apple Watch, Garmin Watch)"
+q16_11,ordinal,Bluetooth Kopfhörer
+q16_12,ordinal,Bluetooth Lautsprecher mit Mikrofon
+q16_13,ordinal,Bluetooth Lautsprecher ohne Mikrofon
+q16_14,ordinal,Mediaplayer (z. B. iPod)
+q16_15,ordinal,Mobile Spielkonsole
+q16_16,ordinal,Kameradrone
+q16_17,ordinal,GPS Navigationsgerät
+q16_18,ordinal,VR/AR Headset
+q16_19,ordinal,Xbox
+q16_20,ordinal,Playstation
+q16_21,ordinal,Nintendo Switch oder Wii
+q16_22,ordinal,Smart TV (mit Android)
+q16_23,ordinal,Apple TV
+q16_24,ordinal,ChromeCast
+q16_25,ordinal,Internet Radio/Receiver
+q16_26,ordinal,"Smart Speaker (z.B. Google Home, Amazon Echo Dot, Apple Homepod)"
+q16_27,ordinal,Smarte Lampen
+q16_28,ordinal,NAS
+q16_29,ordinal,Privater Drucker
+q16_30,ordinal,"Öffentlicher Drucker (z.B. auf dem Campus, im Büro)"
+q18_1,ordinal,"Telefonie, auch via Whatsapp, Skype usw."
+q18_2,ordinal,Video Chat/Videokonferenz
+q18_3,ordinal,Voice Messaging
+q18_4,ordinal,"Texting (z.B. SMS, Whatsapp)"
+q18_5,ordinal,E-Mail
+q18_6,ordinal,Lernapps
+q18_7,ordinal,Lernvideos
+q18_8,ordinal,Kalender
+q18_9,ordinal,Wecker
+q18_10,ordinal,Erinnerungen
+q18_11,ordinal,Notizen
+q18_12,ordinal,Aufgaben
+q18_13,ordinal,"Sprachassistent (Siri, Alexa, Google Voice)"
+q18_14,ordinal,Online-News (z.B. Blogs und News)
+q18_15,ordinal,Nachschlagewerke (z.B. Wikipedia)
+q18_16,ordinal,Übersetzung (z.B. Google Translate)
+q18_17,ordinal,Online-Suche (z.B. Google)
+q18_18,ordinal,Spiele
+q18_19,ordinal,"Soziale Netzwerke (z. B. Facebook, StudiVZ)"
+q18_20,ordinal,"Fotos ansehen (z.B. Instagram, Fotoalbum)"
+q18_21,ordinal,Videos ansehen (z.B. YouTube)
+q18_22,ordinal,"TV schauen (z.B. SRF, Netflix)"
+q18_23,ordinal,Radio und Podcasts hören
+q18_24,ordinal,E-Books lesen
+q18_25,ordinal,Hörbücher anhören
+q18_26,ordinal,Kamera (für Fotos oder Videos)
+q18_27,ordinal,Audio aufzeichnen
+q18_28,ordinal,"Navigation und Fahrpläne (z.B. Maps, SBB, ZVV)"
+q18_29,ordinal,"Online Tickets (SBB, ZVV, Kino)"
+q18_30,ordinal,Augmented Reality (z.B. Google Lens)
+q18_31,ordinal,Home Automatisierung (z.B. für Licht oder Thermostat)
+q18_32,ordinal,Online Shopping
+q18_33,ordinal,E-Banking
+q18_34,ordinal,"Musik hören  (z.B. Musik app, Spotify)"
+q18_35,ordinal,Fitness Apps
+nr,indikator,NA
+q01,metrisch,Lebenshaltung pro Monat
