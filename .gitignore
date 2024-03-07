@@ -7,3 +7,6 @@ __kurs_info/.DS_Store
 .gitignore
 .local/share/jupyter/runtime/jupyter_cookie_secret
 .local/share/jupyter/notebook_secret
+
+*/.quarto 
+*/quarto_article/_*

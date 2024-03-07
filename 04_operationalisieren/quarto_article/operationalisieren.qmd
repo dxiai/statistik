@@ -1,0 +1,393 @@
+--- 
+title: Forschungsfragen operationalisieren
+author: Christian Glahn
+--- 
+
+```{R}
+library(tidyverse)
+library(dagitty)
+library(ggdag)
+```
+
+
+Die Beantwortung von Forschungsfragen steht im Zentrum des wissenschaftlichen Arbeitens. Die Statistik ist dafür ein wichtiges Hilfsmittel, um Annahmen mit Hilfe von Hypothesen zu überprüfen. Der schwierigste Teil der Vorbereitung von empirischen Studien ist die Auswahl geeigneter Hypothesen. 
+
+Um eine Forschungsfrage empirisch zu beantworten, benötigen wir Daten mit einem sinnvollen Zusammenhang zu unserer Fragestellung. Einer der schwierigsten Schritte bei dieser Aufgabe ist die Entscheidung, *welche* Daten erhoben werden sollen. Weil diese Daten Merkmale des Forschungsgegenstands widerspiegeln, ist dieses Problem identisch mit der folgenden Problemstellung: 
+
+::: {.callout-note}
+## Problem
+Welche Merkmale bzw. *Variablen* des Forschungsgegenstands  beeinflussen die Antwort auf die Fragestellung?
+:::
+
+Die Antwort auf diese Frage beschreibt die Daten, die zur Beantwortung der Forschungsfrage erforderlich sind. Die Beantwortung dieser Frage ist die Aufgabe der **Operationalisierung** der Forschungsfrage. 
+
+Diese Aufgabe lässt sich in zwei Teilprobleme gliedern: 
+
+1. Die Auswahl der Variablen 
+2. Die Bestimmung der Zusammenhänge zwischen den Variablen
+
+Weil in dieser Phase des Forschungsprozesses noch keine Daten vorliegen, sind die Ergebnisse dieses Arbeitsschritts immer **Vermutungen** bzw. **Annahmen**. 
+
+::: {.callout-important}
+## Lernziele
+
+* Variablen einer Forschungsfrage zuordnen
+* Zusammenhänge zwischen den Variablen festlegen
+* Beobachtbare und nicht beobachtbare Variablen identifizieren
+* Variablen und Zusammenhänge in einem DAG organisieren und darstellen
+:::
+
+Als Ausgangslage nehmen wir die folgende Forschungsfrage: 
+
+> Gibt es einen Zusammenhang zwischen der selbst-wahrgenommenen Digitalisierung von Studienanfängern und ihrer digitalen Mediennutzung?
+
+Die Frage bezieht sich auf Studienanfänger, d.h. Studierende im 1. Semester. Die Frage hat zwei offensichtliche Variablen: 
+
+1. Die selbst-wahrgenommene Digitalisierung sowie
+2. Die digitale Mediennutzung
+
+Nennen wir diese Variablen `D` für Digitalisierung und `M` für Mediennutzung. Aus der Fragestellung leiten wir ab, dass es eine Verbindung zwischen diesen beiden Variablen gibt. Diese Verbindnung ist ersteinmal *ungerichtet*. Formal könnten wir diese Beziehung wie folgt aufschreiben. 
+
+$$
+D \leftrightarrow M
+$$
+
+Wir können aber einen Schritt weiter gehen und uns fragen, welche der beiden Variablen diesen angenommenen Zusammenhang *verursacht*. Hier haben wir zwei Optionen: 
+
+* Die wahrgenommene Digitalisierung beeinflusst die digitale Mediennutzung.
+* Die digitale Mediennutzung beeinflusst die wahrgenommene Digitalisierung.
+
+Wenn wir uns zwischen diesen beiden Optionen entscheiden müssen, dann ist die zweite Option *plausibler*, weil aus der Medien*nutzung* ein Bezug zu den digitalen Technologien entsteht, der die wahrgenommene Digitalisierung beeinflusst. Umgekehrt ist eine Digitalisierung *ohne* Nutzung digitaler Medien nicht denkbar.
+
+Wir können den Zusammenhang zwischen den Variablen `D` und `M` auch gerrichtet betrachten: 
+
+$$
+D \leftarrow M
+$$
+
+Diese Beziehung lesen wir als: *Die Variable D folgt der Variablen M*. Diesen Term liesst man als: *Die Variable D folgt der Variablen M*. Eine solche Beziehung wird als **Modell** für eine Vermutung bezeichnet. 
+
+::: {.callout-note}
+## Definition
+
+Eine Variable wird als **abhängige Variable** bezeichnet, wenn sie einer anderen Variablen folgt. 
+:::
+
+::: {.callout-note}
+## Definition 
+
+Eine Variable wird als **unabhängige Variable** bezeichnet, wenn ihr andere Variablen folgen. 
+:::
+
+::: {.callout-note}
+## Definition
+
+Ein **Modell** beschreibt vermutete Beziehungen zwischen Variablen.
+:::
+
+Wir haben also die selbst-wahrgenommene Digitalisierung (`D`) als *abhängige Variable* und die digitale Mediennutzung (`M`) als *unabhängige Variable* festgelegt und ein einfaches Modell erstellt.
+
+Damit könnten wir eine empirische Untersuchung beginnen. Die selbst-wahrgenommene Digitalisierung können wir dirket messen, indem wir fragen, wie stark digitalisiert sich die Studienteilnehmenden selbst wahrnehmen. 
+
+Die digitale Mediennutzung könnten wir analog erfragen: Wie stark werden digitale Medien genutzt? Allerdings ist die Mediennutzung kompliziert und umfasst verschiedene Technologien, Medienformate und Nutzungspraktiken. Wenn wir die digitale Mediennutzung auf diese eine Frage reduzieren, dann hängen die Daten von der individuellen Interpretation dieser Facetten durch die Studienteilnehmenden ab.
+
+::: {.callout-warning}
+Je grösser die Interpretationsspielräume bei der Beantwortung der Fragen durch die Studienteilnehmenden sind, desto schwieriger gestaltet sich die spätere empirische Auswertung und Interpretation der erhobenen Daten. 
+:::
+
+Diese Unschärfe können wir durch eine Aufteilung in *Variablen* für die verschiedenen Teilaspekte lösen. Um die verschiedenen Facetten der digitalen Mediennutzung zu berücksichtigen, erweitern wir unser Modell. Dabei verwenden wir `T` für Technologien, `F` für Medienformate und `I` für Interaktionsformen.  Wir berücksichtigen ausserdem, dass die *Gestaltung* und das *Konsumieren* von Interaktionsformen und Medienformaten gleichermassen unabhängig voneinander vorliegen können. Wir bezeichnen daher mit `G_I` die Gestaltung von Interaktionsformen und mit `G_F` die Gestaltung von Medienformaten. Ohne diesen Zusatz ist nur das Konsumieren gemeint. Wir vermuten zusätzlich, dass Menschen, die Interaktionsformen oder Medienformate gestalten, diese auch konsumieren.
+
+Wegen diesen Überlegungen müssen wir unser Modell erweitern. 
+
+$$ 
+\begin{split}
+D \leftarrow M  \\
+M \leftarrow T \\
+M \leftarrow F \\ 
+M \leftarrow I \\
+M \leftarrow G_F \\
+M \leftarrow G_I \\
+F \leftarrow G_F \\
+I \leftarrow G_I
+\end{split} 
+$$ {#eq-model}
+
+::: {.callout-important}
+## Wichtig
+Eine Variable kann *gleichzeitig* eine unabhängige Variable für eine (erste) andere Variable und eine abhängige Variable für eine zweite andere Variable sein sein.
+:::
+
+In unserem Beispiel ist die Variable `M` unabhängig gegenüber der Variable `D` aber abhängig gegenüber den Variablen `T`, `F` usw. 
+
+Damit haben wir bereits recht viele Variablen, die unseren ursprünglichen eigentlich recht einfachen Zusammenhang beeinflussen. In unserem Fall sind diese zusätzlichen Variablen **Indikatoren** für die Mediennutzung. 
+
+::: {.callout-tip}
+## Praxis
+
+Indikatoren werden verwendet, wenn die eigentliche Variable der Forschungsfrage nicht direkt beobachtet werden kann. 
+:::
+
+In unserem Fall ist die Variable `M` nur *indirekt* durch die Indikatoren beobachtbar. Solche *indirekten Variablen* sind von *unbeobachtbaren Variablen* verschieden. 
+
+::: {.callout-tip}
+## Praxis
+Die Operationalisierung ist erst dann vollständig abgeschlossen, wenn alle Variablen mit *messbaren Merkmalsausprägungen* auf einem gewünschten Skalenniveau herausgearbeitet haben.
+:::
+
+::: {.callout-important}
+## Wichtige Regeln für die Praxis
+1. **Jede** Variable muss in Beziehung zu mindestens einer anderen Variablen stehen. 
+
+2. **Jede** Beziehung zwischen zwei Variablen in einem Modell entspricht einer (Teil-)Hypothese einer Forschungsfrage. 
+
+3. **Alle** im Modell festgehaltenen Beziehungen **müssen** ausgewertet und überprüft werden.
+:::
+
+Insbesondere die erste Regel ist entscheidend, um sog. **exzessives** Datensammeln zu vermeiden. Sie gilt auch für sog. demographische Daten. Grundsätzlich gilt, dass Variablen ohne Bezug zum Modell als *funktionslos* für das Modell zu betrachten sind. Das ist bei Untersuchungen mit Menschen besonders relevant, weil funktionslose Variablen als *ethisch inakzeptabel* gelten.
+
+## Unbeobachtbare Variablen
+
+::: {.callout-note}
+## Definition
+
+Eine Variable ist **unbeobachtbar**, wenn sie nicht gemessen werden kann oder darf. 
+:::
+
+Unsere Studien werden in diesen Fällen keine Werte für un beobachtbare Variablen erzeugen. Für die Operationalisierung sind diese Variablen trotzdem von Bedeutung, weil wir sie in unser Modell aufnehmen können. So können wir überprüfen, ob nicht gemessene Variablen die Ergebnisse einer Studie beeinflussen können bzw. wir können bei der Durchführung künstliche Verzerrungen durch diese Variablen vermeiden.  
+
+> Die Dokumentation unbeobachteter Variablen ist für die Simulation von Ergebnissen wichtig, weil sich so mögliche Effekte dieser Variablen mit den erhobenen Werten vergleichen lassen.
+
+Unbeobachtbare Variablen lassen sich in einem Modell berücksichtigen, indem sie in Klammern gesetzt werden.
+
+In unserem Beispiel könnten wir annehmen, dass die empfundene Digitalisierung mit der Wahl des zukünftigen Arbeitsprofils (`P`)in Beziehung steht. Weil dieses Profil in der Zukunft liegt und deshalb nicht bekannt sein kann, ist diese Variable unbeobachtbar. In unserem Modell könnten wir sie dennoch berücksichtigen. In solchen Fällen wird die unbeobachtbare Variable in Klammern gesetzt.
+
+$$
+(P) \leftarrow D
+$$
+
+## Kausale Operationalisierung mit DAGs
+
+Unser Model (@eq-model) ist recht komplex und unübersichtlich. In der Praxis wird zur Darstellung von empirischen Modellen in der Regel sog. DAGs. verwendet. 
+
+DAGs sind ein wichtiges Werkzeug zum Operationalisieren von empirischen Studien (Pearl & Mackenzie, 2018). Ein DAG ist ein einfaches und gleichzeitig sehr leistungsstarkes Werkzeug zur Analyse eines Studiendesigns mit Bezug auf die zu erwartenden statistischen Effekte. Wir können also mit Hilfe eines DAGs viele Aussagen über die statistischen Ergebnisse machen bevor wir Daten erhoben haben.   
+
+::: {.callout-note}
+## Definition
+Ein DAG ist ein gerichteter Graph (engl. Directed Acyclic Graph), mit dessen Hilfe die theoretischen Kausalzusammenhänge beschrieben werden. 
+:::
+
+Ein DAG besteht aus sog. *Konten* und *Kanten* zwischen den Knoten. Ein Knoten sind immer benannt. Üblicherweise werden Knoten als Kreis dargestellt. Eine Kante beschreibt die kausale Wechselwirkung zwischen zwei Knoten und wird als Pfeil dargestellt. Eine Beziehung hat immer genau einen Ausgangsknoten und einen Zielknoten. Die Pfeilspitze zeigt dabei immer auf den Zielknoten. Der Ausgangsknoten bezeichnet eine Ursache für die erwarteten oder beobachteten Werte des Zielknotens (die Wirkung).
+
+Jeder Knoten kann gleichzeitig Ausgangspunkt und Ziel von Beziehungen mit mehreren Knoten sein. Ein Knoten symbolisiert die Summe der Ursachen. Grundsätzlich gilt dabei, dass alle Werte für alle Knoten **gleichzeitig** vorliegen. Folgt man den Pfeilen eines DAG, so ist es verboten, dass man zu einem Knoten zurückkehren kann. Dadurch ist sichergestellt, dass ein DAG keine Zyklen enthält. Es ist also nicht möglich Rückkopplungen zwischen Knoten mit einem DAG zu modellieren.
+
+Mit einem DAG wird das sog. *kausale* Modell des Untersuchungsgegenstands dokumentiert. Es handelt sich um die *theoretische Voraussetzung* der geplanten empirischen Untersuchung. Ein kausales Modell beschreibt die erwarteten und bekannten Wechselwirkungen zwischen zu messenden aber auch nicht messbaren Aspekten. Ein DAG repräsentiert *unsere Vorstellung* des Untersuchungsgegenstands, mit der wir die durchzuführenden statistischen Tests begründen und überprüfen. 
+
+Um unser Modell entsprechend darzustellen, zeichnen wir für jede Variable unseres Modells einen Kreis und beschriften diesen mit dem Variablennamen (bzw. mit der entsprechenden Kennung). Anschliessend werden die vermuteten Beziehungen zwischen den einzelnen Variablen analog zum Modell als Pfeile eingezeichnet.
+
+```{R}
+#| label: fig-valid-dag-with-indirect
+#| fig-cap: Beispielmodell als DAG
+dagify(
+    D ~ M, 
+    M ~ T + F + I + G_F + G_I,
+    G_F ~ F,
+    G_I ~ I
+) |> 
+  ggdag() + 
+    theme_dag()
+```
+
+Weil in unserem Fall die Mediennutzung nur indirekt bestimmt wird, können wir das Modell in einem ersten Schritt vereinfachen und nur die direkt beobachteten Variablen untersuchen. Diese Vereinfachung ist notwendig, weil wir den Einfluss der Indikatoren auf die indirekte Variable (`M`) nicht validiert haben. D.h. wir wissen nicht wie stark die Indikatoren die indikrete Variable beeinflussen.
+
+```{R}
+#| label: fig-valid-dag-without-indirect
+#| fig-cap: Beispielmodell als DAG ohne die indirekte Variable `M`
+dagify(
+    D ~ T + F + I + G_F + G_I,
+    G_F ~ F,
+    G_I ~ I
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Mit dieser Darstellung können wir leicht überprüfen, ob unser DAG gültig ist. Dazu folgen wir den Pfeilen und prüfen ob wir wieder an einen Ausgangsknoten zurückkommen. In diesem Fall wäre unser Modell ungültig. 
+
+> **Exkurs:** Zyklische Modelle sind in der Realität weit verbreitet. Diese Modelle werden als *Systeme* oder *Feedbacksysteme* bezeichnet. Die *Systemtheorie* (Meadows, 2015) beschäftigt sich mit der Modellierung und Untersuchung komplexer Systeme. Diese Systeme sind eine Verallgemeinerung Erweiterungen von DAGs, wobei mehrere Teilmodelle über "Verzögerungen" verbunden werden. In einem Systemmodell liegen die Werte für alle Knoten ***nie gleichzeitig*** vor.
+
+Das @fig-invalid-dag zeigt ein ungültiges DAG. 
+
+
+```{R}
+#| label: fig-invalid-dag
+#| fig-cap: Beispiel für ein ungültiges DAG
+
+dagify(
+    A ~ B,
+    B ~ C,
+    C ~ A
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+## Interpretationsregeln für DAGs
+
+Kausale DAG verfügen über mehrere Regeln, mit denen sich  Effekte  in empirischen Studien vorhersagen lassen. Diese ergeben sich aus den Arrangements der Knoten und Beziehungen. Drei Basismuster sind für die Operationalisierung von Studien wichtig: 
+
+1. Die Kette (orig. *pipe*)
+2. Die Verzweigung (orig. *fork*)
+3. Der Zusammenstoss (orig. *collider*)
+
+Dieses Basismuster helfen bei der Analyse von Studien. 
+
+### Kette 
+
+Bei der Kette sind die Variablen paarweise von einer anderen Variable abhängig. 
+
+```{R}
+#| label: fig-dag-chain
+#| fig-cap: Beispiel für eins kausale Kette (chain)
+
+dagify(
+    A ~ B,
+    B ~ C
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Bei einer Kette wirkt eine unabhängige Variable *indirekt* durch eine andere Variable auf eine Zielvariable. Diese indirekte Wirkung kann sowohl verstärkend als auch abschwächend wirken.
+
+### Verzweigung
+
+Bei der Verzweigung sind zwei Variablen von einer unabhängigen Variable abhängig. 
+
+
+```{R}
+#| label: fig-dag-fork
+#| fig-cap: Beispiel für eine kausale Verzweigung (fork)
+
+dagify(
+    A ~ B,
+    C ~ B
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Bei einer Verzweigung wird durch die gemeinsame Einflussgrösse eine Beziehung zwischen den beiden abhängigen Variablen geschaffen, obwohl diese Beziehung zwischen diesen Variablen nicht existieren muss. 
+
+
+::: {.callout-note}
+## Merke
+Zwei Variablen werden korrelieren, wenn sie (mindestens) eine gemeinsame kausale Ursache haben. 
+:::
+
+### Zusammenstoss
+
+Beim Zusammenstoss ist eine Variable von zwei unabhängigen Variablen abhängig. 
+
+```{R}
+#| label: fig-dag-collider
+#| fig-cap: Beispiel für einen kausalen Zusammenstoss (collider) 
+
+dagify(
+    B ~ A,
+    B ~ C
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Ein Zusammenstoss wirkt entgegengesetzt zur Verzweigung:  Durch den gemeinsamen Einfluss kann der Eindruck entstehen, als ob eine Beziehung zwischen den unabhängigen Variablen besteht, falls nicht alle Merkmalsausprägungen der abhängigen Variable berücksichtigt (bzw. gemessen) werden.
+
+Dieser Effekt entsteht immer dann, wenn eine Stichprobe so gewählt wurde, dass die Merkmale von abhängigen Variablen innerhalb der Stichprobe wenig variieren. Dieser Effekt wird auch als Selektionsbias (Selection-Bias) bezeichnet.
+
+### Anwendung der Regeln zur Problemerkennung
+
+Mithilfe dieser drei Muster lassen sich Problem in empirischen Studien erkennen und Fehlinterpretationen vermeiden. Damit das erreicht werden kann müssen alle Merkmalsausprägungen einer Variable festgehalten sein. Dabei handelt es sich um die gültigen Werte innerhalb des Wertebereichs und *nicht* um die gemessenen Werte. 
+
+Der häufigste Fehler in empirischen Studien ist das sog. Hintertürproblem. Der einfachste Fall des Hintertürproblems zeigt @fig-dag-backdoor-0.
+
+```{R}
+#| label: fig-dag-backdoor-0
+#| fig-cap: Beispiel für ein Hintertürproblem
+
+dagify(
+   P ~ A,
+   B ~ A
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Werden für die Variable `P` zu wenige Merkmalsausprägungen gemessen, erzwingen diese Werte die Beziehung zwischen `A` und `B`, obwohl `B` normalerweise keinen Bezug zur Variable `P` hätte.
+
+Während der einfache Fall in der Praxis meist automatisch vermieden wird, kommen Fälle wie in @fig-dag-backdoor-1 regelmässig vor.
+
+```{R}
+#| label: fig-dag-backdoor-1
+#| fig-cap: Beispiel für ein Hintertürproblem
+
+dagify(
+   P ~ A + B,
+   X ~ A,
+   Y ~ B + X
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Werden im Bespiel aus @fig-dag-backdoor-1 für die Variable `P` nur sehr wenige Merkmalsausprägungen gemessen, dann führt das Modell automatisch dazu, dass die Beziehung zwischen den Variablen `X` und `Y` immer bestätigt wird. In diesem Fall wird immer eine *Tautologie* erzeugt.
+
+Ein ähnliches Problem ergibt sich im Modell @fig-dag-backdoor-2.
+
+```{R}
+#| label: fig-dag-backdoor-2
+#| fig-cap: Beispiel für ein Hintertürproblem
+
+dagify(
+   P ~ A,
+   Y ~ A,
+   A ~ X
+) |>
+    ggdag() + 
+    theme_dag()
+```
+
+Werden in diesem Fall zu wenige Merkmalsausprägungen für die Variable `P` gemessen, dann wirkt diese Variable quasi durch die Hintertür auf die Beziehungen der Variablen `A`, `X` und `Y`, die nun ebenfalls je nach Wirkungsbeziehung der Variablen `A` und `P` existieren oder verschwinden.
+
+## Ein alternatives Beispiel 
+
+Zum Beispiel nehmen wir an, dass wir das Gewicht von Kindern untersuchen möchten. Wir wissen, dass das Gewicht sowohl vom Alter als auch vom Geschlecht beeinflusst wird. Dieser Einfluss beschreibt die kausale Beziehung von Alter ***und*** Geschlecht auf das Gewicht. Diese Beziehung können wir in der abgekürzten Modellformel beschreiben: $Gewicht \leftarrow Alter + Geschlecht$. Wir lesen diese Formel wie folgt: "Die Werte in der Variable `Gewicht` (`Gw`) folgen den Werten der Variablen `Alter` (`A`) und `Geschlecht` (`G`).  
+
+Wenn wir dieses Modell erweitern und die Rechtschreibung (`Rs`) der Kinder einbeziehen, dann können wir das mit der folgenden Modellformel erreichen: $Rechtschreibung \leftarrow Alter + Geschlecht$. 
+
+Das entsprechende DAG sieht dann wie folgt aus.
+
+```{r}
+#| label: fig-dag-example-2
+#| fig-cap: DAG für Gewichtung und Rechtschreibung bei Kindern
+dagify(
+    Gw ~ A + G,
+    Rs ~ A + G
+) -> DAGModell
+
+DAGModell |>
+  ggdag() +
+      theme_dag()
+```
+
+Dieses DAG liefert uns bereits viele wichtige Informationen für eine empirische Studie.
+
+1. Die kausale Beziehung  zwischen Alter und Gewicht legt einen *Zusammenhang* zwischen diesem beiden Variablen nahe. Statistisch ist ein Zusammenhang ungerichtet . Erst durch das DAG wird die Richtung des Zusammenhangs deutlich.
+2.  Die kausale Beziehung zwischen Geschlecht und Gewicht legt ebenfalls einen Zusammenhang zwischen diesen beiden Variablen nahe. Dieser Zusammenhang sollte sich über einen *Unterschied* des Gewichts zwischen den Geschlechtern zeigen. 
+
+Jeder dieser Punkte liefert uns eine empirisch überprüfbare Hypothese. Wichtig ist jedoch ein weiterer Punkt, der implizit in unserem DAG steht: Die Werte der Variablen Rechtschreibung und Gewicht sollten *korrelieren*, weil sie die gleichen Ursachen haben. D.h. wenn wir die Werte der beiden Variablen in einem Punktdiagramm gegenüberstellen sollten die Punkte mehr oder weniger einer Linie folgen. Unser DAG zeigt aber keinen Pfeil, der Rechtschreibung und Gewicht verbindet und eine solche Beziehung begründen würde. Diese Beziehung fehlt, weil wir keinen Grund haben, eine ursächliche Beziehung zwischen Rechtschreibung und Gewicht anzunehmen. 
+
+## Referenzen
+
+* Meadows, D.H. (2015). Thinking in Systems. Chelsea Green Publishing House.
+* Barrett, M. (2021). An Introduction to directed graph analysis. [CRAN](https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html)
+* Pearl, J., & Mackenzie, D. (2018). The book of why: the new science of cause and effect.  Penguin Press. 
