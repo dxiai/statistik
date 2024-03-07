@@ -101,14 +101,16 @@ Wegen diesen Überlegungen müssen wir unser Modell erweitern.
 
 $$ 
 \begin{split}
-D \leftarrow M  \\
-M \leftarrow T \\
-M \leftarrow F \\ 
-M \leftarrow I \\
-M \leftarrow G_F \\
-M \leftarrow G_I \\
-F \leftarrow G_F \\
-I \leftarrow G_I
+\begin{aligned}
+D  & \leftarrow M  \\
+M  & \leftarrow T \\
+M  & \leftarrow F \\ 
+M  & \leftarrow I \\
+M  & \leftarrow G_F \\
+M  & \leftarrow G_I \\
+F  & \leftarrow G_F \\
+I  & \leftarrow G_I
+\end{aligned}
 \end{split} 
 $$ {#eq-model}
 
